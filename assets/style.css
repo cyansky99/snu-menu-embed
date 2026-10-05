@@ -30,6 +30,9 @@ h2::before { content: ""; width: 4px; height: 16px; border-radius: 2px; flex: 0 
 .section { color: #787774; font-size: 11px; }
 .menu-line.section:not(:first-child) { border-top: 1px solid #e7e6e4; padding-top: 12px; margin-top: 12px; }
 .empty { margin: 0; color: #787774; font-size: 12px; line-height: 1.75; }
+.attribution { margin-top: 8px; text-align: right; font-size: 10px; line-height: 1; color: #b4b2ae; }
+.attribution a { color: #b4b2ae; text-decoration: none; }
+.attribution a:hover, .attribution a:focus-visible { color: #787774; text-decoration: underline; }
 @media (max-width: 639px) {
   .restaurants { grid-template-columns: 1fr; gap: 10px; }
   .widget { padding: 12px; }
