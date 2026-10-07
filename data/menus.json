@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-10-07T15:40:13+09:00",
+  "fetchedAt": "2026-10-08T02:04:55+09:00",
   "days": {
-    "2026-10-07": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-07&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "목살김치찌개&뿌링클치킨 : 6,000원\n짜계볶 : 6,000원\n<든든한끼샐러드코너>\n풀드포크샐러드(채식변경가능) : 9,000원",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<셀프코너> 7,000원\n잡곡밥\n시래기된장국\n마늘보쌈\n시즈닝팝콘치킨\n비빔막국수\n무말랭이무침\n포기김치\n그린샐러드\n오늘의차",
-            "dinner": "<셀프코너> 7,000원\n잡곡밥\n가쓰오어묵국\n불고기마라샹궈\n모듬고로케*소스\n타카나즈케무침\n통식빵허니브레드\n포기김치\n그린샐러드\n오늘의차"
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "차돌된장죽 : 3,000원",
-            "lunch": "오코노미온더치킨까스 : 6,500원\n제육감자고추장찌개 : 3,000원\n갈비탕 : 6,000원",
-            "dinner": "매운갈비떡찜 : 6,000원\n두부버섯탕수(#) : 3,000원"
-          }
-        }
-      ]
-    },
     "2026-10-08": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-08&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "제육숙주볶음 : 3,000원",
             "lunch": "쇠고기장조림버터비빔밥 : 6,000원\n생선까스정식(#) : 3,000원\n우거지감자탕 : 6,000원",
             "dinner": "순살양념치킨 : 6,000원\n무장국 : 3,000원"
+          }
+        }
+      ]
+    },
+    "2026-10-09": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-09&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "한글날 휴무",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "한글날 휴무",
+            "lunch": "한글날 휴무",
+            "dinner": "한글날 휴무"
           }
         }
       ]
