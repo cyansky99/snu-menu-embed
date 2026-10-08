@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-10-08T15:46:29+09:00",
+  "fetchedAt": "2026-10-09T02:03:49+09:00",
   "days": {
-    "2026-10-08": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-08&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "설렁탕&오징어두부두루치기 : 6,000원\n갈비구이&쇠고기미역국 : 6,000원\n<든든한끼샐러드코너>\n에그&리코타치즈샐러드(채식변경가능) : 9,000원",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<셀프코너> 7,000원\n잡곡밥\n부추돼지국밥\n치즈순살불닭\n경양식순살돈까스\n베이컨야끼우동\n마늘쫑지무침\n깍두기\n그린샐러드\n오늘의차",
-            "dinner": "<셀프코너> 7,000원\n잡곡밥\n감자수제비국\n묵은지돈육찜\n동그랑땡고기산적구이\n산고추지\n콩가루연유유티아오\n깍두기\n그린샐러드\n오늘의차"
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "제육숙주볶음 : 3,000원",
-            "lunch": "쇠고기장조림버터비빔밥 : 6,000원\n생선까스정식(#) : 3,000원\n우거지감자탕 : 6,000원",
-            "dinner": "순살양념치킨 : 6,000원\n무장국 : 3,000원"
-          }
-        }
-      ]
-    },
     "2026-10-09": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-09&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "한글날 휴무",
             "lunch": "한글날 휴무",
             "dinner": "한글날 휴무"
+          }
+        }
+      ]
+    },
+    "2026-10-10": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-10&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "정전으로 인한 휴무",
+            "dinner": "정전으로 인한 휴무"
           }
         }
       ]
