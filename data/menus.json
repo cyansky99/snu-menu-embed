@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-10-09T15:54:47+09:00",
+  "fetchedAt": "2026-10-10T01:41:35+09:00",
   "days": {
-    "2026-10-09": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-09&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "한글날 휴무",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "한글날 휴무",
-            "lunch": "한글날 휴무",
-            "dinner": "한글날 휴무"
-          }
-        }
-      ]
-    },
     "2026-10-10": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-10&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "",
             "lunch": "정전으로 인한 휴무",
             "dinner": "정전으로 인한 휴무"
+          }
+        }
+      ]
+    },
+    "2026-10-11": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-11&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
           }
         }
       ]
