@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-10-15T23:31:26+09:00",
+  "fetchedAt": "2026-10-16T03:45:22+09:00",
   "days": {
-    "2026-10-15": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-15&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "개교기념일 휴무",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<셀프코너> 7,000원\n잡곡밥\n뼈없는감자탕\n순살지코바닭구이*단호박떡사리\n바차멘치까스*소스\n치킨마크리커리\n짜사이무침\n포기김치\n그린샐러드\n오늘의차",
-            "dinner": "<셀프코너> 7,000원\n잡곡밥\n크림스프\n함박스테이크*소스\n핫로제치킨파스타\n할라피뇨\n이츠웰와플과자\n포기김치\n그린샐러드\n오늘의차"
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "개교기념일 휴무",
-            "lunch": "개교기념일 휴무",
-            "dinner": "개교기념일 휴무"
-          }
-        }
-      ]
-    },
     "2026-10-16": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-16&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "순두부찌개(#) : 3,000원",
             "lunch": "투움바파스타(#) : 6,000원\n꽁치무조림(#) : 3,000원\n나주식맑은돼지곰탕 : 6,000원",
             "dinner": "고추장숙주불고기 : 6,000원\n떡국(#) : 3,000원"
+          }
+        }
+      ]
+    },
+    "2026-10-17": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-17&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "불향제육볶음 : 6,000원",
+            "dinner": "맛쵸킹치킨 : 6,500원"
           }
         }
       ]
