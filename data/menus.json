@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-10-17T22:20:37+09:00",
+  "fetchedAt": "2026-10-18T02:35:40+09:00",
   "days": {
-    "2026-10-17": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-17&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "불향제육볶음 : 6,000원",
-            "dinner": "맛쵸킹치킨 : 6,500원"
-          }
-        }
-      ]
-    },
     "2026-10-18": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-18&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "",
             "lunch": "",
             "dinner": ""
+          }
+        }
+      ]
+    },
+    "2026-10-19": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-19&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "차돌된장찌개&토마토스크램블에그 : 6,000원\n알참치덮밥&토마토스크램블에그 : 6,000원\n<든든한끼샐러드코너>\n닭가슴살블랙페퍼샐러드(채식변경가능) : 8,500원",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "<셀프코너> 7,000원\n잡곡밥\n부추돼지국밥\n직화제육볶음\n동글가라아게*렌치소스\n고구마치즈떡볶이\n마늘쫑지무침\n깍두기\n그린샐러드\n오늘의차",
+            "dinner": "<셀프코너> 7,000원\n고깃집마무리볶음밥\n두부팽이미소국\n단짠돈육찜\n교자만두튀김\n콩자반\n베스킨쫀떡궁합파이\n깍두기\n그린샐러드\n오늘의차"
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "된장찌개 : 3,000원",
+            "lunch": "치즈돈까스 : 6,000원\n닭불고기간장볶음 : 3,000원\n쇠고기마파두부덮밥 : 6,000원",
+            "dinner": "안동식찜닭 : 6,000원\n사골우거지국 : 3,000원"
           }
         }
       ]
