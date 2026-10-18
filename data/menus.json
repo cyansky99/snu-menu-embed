@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-10-18T14:15:10+09:00",
+  "fetchedAt": "2026-10-19T02:38:23+09:00",
   "days": {
-    "2026-10-18": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-18&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        }
-      ]
-    },
     "2026-10-19": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-19&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "된장찌개 : 3,000원",
             "lunch": "치즈돈까스 : 6,000원\n닭불고기간장볶음 : 3,000원\n쇠고기마파두부덮밥 : 6,000원",
             "dinner": "안동식찜닭 : 6,000원\n사골우거지국 : 3,000원"
+          }
+        }
+      ]
+    },
+    "2026-10-20": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-20&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "영계백숙 : 6,000원\n고추장숙주불고기 : 6,000원\n<든든한끼샐러드코너>\n풀드포크샐러드(채식변경가능) : 9,000원",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "<셀프코너> 7,000원\n잡곡밥\n아욱된장국\n수육보쌈*쌈장\n시즈닝깐풍볼\n비빔막국수\n무말랭이무침\n포기김치\n그린샐러드\n오늘의차",
+            "dinner": "<셀프코너> 7,000원\n잡곡밥\n돈육김치찌개\n맛쵸킹순살닭조림\n생선까스*타르소스\n건파래볶음\n더티초코크로와상\n포기김치\n그린샐러드\n오늘의차"
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "녹두닭죽 : 3,000원",
+            "lunch": "오므라이스&육즙함박 : 6,000원\n만두국 : 3,000원\n목살김치찌개 : 6,000원",
+            "dinner": "매운갈비떡찜 : 6,000원\n북어설렁탕 : 3,000원"
           }
         }
       ]
