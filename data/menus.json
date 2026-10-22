@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-10-22T23:48:37+09:00",
+  "fetchedAt": "2026-10-23T03:55:56+09:00",
   "days": {
-    "2026-10-22": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-22&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "열무비빔밥&감자수제비 : 6,000원\n닭목살양념구이&들기름막국수 : 6,500원\n<든든한끼샐러드코너>\n소고기샤부샐러드(채식변경가능) : 9,500원",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<셀프코너> 7,000원\n잡곡밥\n우거지장터국밥\n기사식당돼지불백\n꼬치없는소떡갈떡구이\n새콤비빔쫄면\n고추지무침\n깍두기\n그린샐러드\n오늘의차",
-            "dinner": "<셀프코너> 7,000원\n잡곡밥\n크림스프\n치폴레마요순살치킨\n나폴리탄파스타\n오이피클\n파인애플펑리수\n깍두기\n그린샐러드\n오늘의차"
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "버섯스크램블에그 : 3,000원",
-            "lunch": "제육고추장볶음 : 6,000원\n콩나물밥&양념장(#) : 3,000원\n잔치국수(#) : 6,000원",
-            "dinner": "지코바치밥 : 6,500원\n육개장 : 3,000원"
-          }
-        }
-      ]
-    },
     "2026-10-23": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-23&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "슈프림팝콘치킨 : 3,000원",
             "lunch": "갈비탕 : 6,000원\n헐랭이수육 : 3,000원\n코코넛밀크새우커리(#) : 6,000원",
             "dinner": "칠리깐풍육 : 6,000원\n청국장찌개 : 3,000원"
+          }
+        }
+      ]
+    },
+    "2026-10-24": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-24&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "옛날통닭 : 6,500원",
+            "dinner": "불고기필라프&소스 : 6,500원"
           }
         }
       ]
