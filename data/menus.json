@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-10-23T23:31:20+09:00",
+  "fetchedAt": "2026-10-24T03:47:07+09:00",
   "days": {
-    "2026-10-23": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-23&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "쇠고기마라탕&계란볶음밥 : 6,500원\n고추소스돈까스 : 5,500원\n<든든한끼샐러드코너>\n칠리페퍼슈프림샐러드(채식변경가능) : 9,500원",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<셀프코너> 7,000원\n잡곡밥\n우삼겹고추장찌개\n숯불연탄바베큐닭조림\n크림마요꿔바로우\n라구미트볼조림\n오복채무침\n포기김치\n그린샐러드\n오늘의차",
-            "dinner": "<셀프코너> 7,000원\n잡곡밥\n북어콩나물해장국\n불고기마라샹궈\n치킨너겟*강정소스\n타카나즈케무침\n포켓바나콘\n깍두기\n그린샐러드\n오늘의차"
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "슈프림팝콘치킨 : 3,000원",
-            "lunch": "갈비탕 : 6,000원\n헐랭이수육 : 3,000원\n코코넛밀크새우커리(#) : 6,000원",
-            "dinner": "칠리깐풍육 : 6,000원\n청국장찌개 : 3,000원"
-          }
-        }
-      ]
-    },
     "2026-10-24": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-24&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "",
             "lunch": "옛날통닭 : 6,500원",
             "dinner": "불고기필라프&소스 : 6,500원"
+          }
+        }
+      ]
+    },
+    "2026-10-25": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-25&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
           }
         }
       ]
