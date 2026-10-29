@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-10-29T15:36:28+09:00",
+  "fetchedAt": "2026-10-30T01:29:50+09:00",
   "days": {
-    "2026-10-29": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-29&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "우거지감자탕 : 6,000원\n오리주물럭 : 6,500원\n<든든한끼샐러드코너>\n베이비폭립샐러드(채식변경가능) : 10,500원",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<셀프코너> 7,000원\n잡곡밥\n의정부부대찌개\n직화제육볶음\n치킨까스*갈릭디핑소스\n새콤칼빔면\n콩자반\n깍두기\n그린샐러드\n오늘의차",
-            "dinner": "<셀프코너> 7,000원\n잡곡밥\n감자스프\n함박스테이크*소스\n투움바파스타\n할라피뇨\n치즈후레시팡*딸기쨈\n깍두기\n그린샐러드\n오늘의차"
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "사골우거지국 : 3,000원",
-            "lunch": "불고기오일파스타 : 6,000원\n순두부찌개(#) : 3,000원\n낙지주꾸미생채소비빔밥(#) : 6,000원",
-            "dinner": "통마늘부추제육볶음 : 6,000원\n칠리깐풍어묵잡채(#) : 3,000원"
-          }
-        }
-      ]
-    },
     "2026-10-30": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-30&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "제육숙주볶음 : 3,000원",
             "lunch": "영계백숙 : 6,000원\n단호박카레(#) : 3,000원\n사천식제육강정 : 6,000원",
             "dinner": "불고기덮밥 : 6,000원\n참치김치찌개(#) : 3,000원"
+          }
+        }
+      ]
+    },
+    "2026-10-31": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-10-31&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "병천식순대국밥 : 6,500원",
+            "dinner": "토종닭볶음탕 : 6,500원"
           }
         }
       ]
