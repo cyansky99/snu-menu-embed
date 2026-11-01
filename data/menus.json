@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-11-01T15:58:45+09:00",
+  "fetchedAt": "2026-11-02T01:30:06+09:00",
   "days": {
-    "2026-11-01": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-01&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        }
-      ]
-    },
     "2026-11-02": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-02&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "콩나물북어탕(#) : 3,000원",
             "lunch": "핫커리치킨텐더 : 6,000원\n제육메추리알장조림 : 3,000원\n차돌양지쌀국수 : 6,500원",
             "dinner": "파채불고기 : 6,000원\n순두부찌개(#) : 3,000원"
+          }
+        }
+      ]
+    },
+    "2026-11-03": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-03&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "뼈없는닭갈비&미니물막국수 : 6,500원\n부타동&김말이강정 : 6,000원\n<든든한끼샐러드코너>\n풀드포크샐러드(채식변경가능) : 9,000원",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "<셀프코너> 7,000원\n잡곡밥\n시래기된장국\n마늘보쌈\n시즈닝팝콘치킨\n비빔막국수\n무말랭이무침\n포기김치\n그린샐러드\n오늘의차",
+            "dinner": "<셀프코너> 7,000원\n잡곡밥\n돈육순두부찌개\n순살닭볶음탕\n파채멘치까스*오리엔탈D\n타카나즈케무침\n치킨맛에낙과자\n깍두기\n그린샐러드\n오늘의차"
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "닭불고기간장볶음 : 3,000원",
+            "lunch": "매운갈비떡찜 : 6,000원\n청국장찌개 : 3,000원\n만두육개장 : 5,500원",
+            "dinner": "지코바치밥 : 6,500원\n오징어바칠리강정(#) : 3,000원"
           }
         }
       ]
