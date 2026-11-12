@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-11-12T16:50:43+09:00",
+  "fetchedAt": "2026-11-13T02:47:25+09:00",
   "days": {
-    "2026-11-12": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-12&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "설렁탕&오징어두부두루치기 : 6,000원\n짜계볶 : 6,000원\n<든든한끼샐러드코너>\n닭가슴살마일드샐러드(채식변경가능) : 8,500원",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<셀프코너> 7,000원\n잡곡밥\n뼈없는감자탕\n닭다리살맛쵸킹순살닭조림\n파채고기산적구이*레몬오리엔탈D\n들기름막국수\n고추지무침\n깍두기\n그린샐러드\n오늘의차",
-            "dinner": "<셀프코너> 7,000원\n잡곡밥\n양송이스프\n함박스테이크*소스\n나폴리탄스파게티\n할라피뇨\n휘낭시에\n깍두기\n그린샐러드\n오늘의차"
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "순두부찌개(#) : 3,000원",
-            "lunch": "맛쵸킹치킨 : 6,000원\n무쇠고기국백반 : 3,000원\n우거지감자탕 : 6,000원",
-            "dinner": "쭈삼불고기 : 6,000원\n버섯잡채 : 3,000원"
-          }
-        }
-      ]
-    },
     "2026-11-13": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-13&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "쇠고기미역죽 : 3,000원",
             "lunch": "갈비탕 : 6,000원\n오코노미함박 : 3,000원\n올리브상추비빔밥&두부버섯탕수(#) : 6,000원",
             "dinner": "닭갈비볶음밥 : 6,000원\n사골우거지국 : 3,000원"
+          }
+        }
+      ]
+    },
+    "2026-11-14": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-14&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "핫커리돈까스 : 6,500원",
+            "dinner": "파채불고기 : 6,500원"
           }
         }
       ]
