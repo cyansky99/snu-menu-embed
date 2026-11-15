@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-11-15T16:19:27+09:00",
+  "fetchedAt": "2026-11-16T01:40:57+09:00",
   "days": {
-    "2026-11-15": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-15&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        }
-      ]
-    },
     "2026-11-16": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-16&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "제육숙주볶음 : 3,000원",
             "lunch": "치킨마요덮밥 : 6,000원\n쇠고기채소찌개 : 3,000원\n나주식맑은돼지곰탕 : 6,000원",
             "dinner": "더블함박스테이크&감자튀김 : 6,000원\n북어탕(#) : 3,000원"
+          }
+        }
+      ]
+    },
+    "2026-11-17": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-17&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "눈꽃치즈불닭볶음 : 6,000원\n불고기비빔밥&청국장찌개 : 6,500원\n<든든한끼샐러드코너>\n베이비폭립샐러드(채식변경가능) : 10,500원",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "<셀프코너> 7,000원\n잡곡밥\n시래기된장국\n수육보쌈*쌈장\n시즈닝팝콘치킨\n비빔막국수\n무말랭이무침\n포기김치\n그린샐러드\n오늘의차",
+            "dinner": "<셀프코너> 7,000원\n잡곡밥\n돈육김치찌개\n기사식당돼지불백\n생선까스*타르소스\n건파래볶음\n더티초코크로와상\n깍두기\n그린샐러드\n오늘의차"
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "된장찌개 : 3,000원",
+            "lunch": "레몬크림새우 : 6,500원\n콩나물밥&양념장(#) : 3,000원\n고추장숙주불고기 : 6,000원",
+            "dinner": "삼겹살덮밥 : 6,000원\n바지락수제비(#) : 3,000원"
           }
         }
       ]
