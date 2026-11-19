@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-11-19T17:07:39+09:00",
+  "fetchedAt": "2026-11-20T03:44:00+09:00",
   "days": {
-    "2026-11-19": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-19&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "차돌양지쌀국수 : 6,500원\n묵은지갈비찜 : 6,500원\n<든든한끼샐러드코너>\n닭가슴살블랙페퍼샐러드(채식변경가능) : 8,500원",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<셀프코너> 7,000원\n잡곡밥\n샤브우육버섯전골\n고추장돈육주물럭\n뿌링클통살탕수육*요거트소스\n라구미트볼조림\n타카나즈케무침\n포기김치\n그린샐러드\n오늘의차",
-            "dinner": "<셀프코너> 7,000원\n잡곡밥\n감자스프\n순살치킨*갈비맛소스\n핫로제치킨파스타\n할라피뇨\n솔트밀크포켓팝콘\n깍두기\n그린샐러드\n오늘의차"
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "녹두닭죽 : 3,000원",
-            "lunch": "바베큐립&김치볶음밥 : 7,000원\n맑은순두부탕(#) : 3,000원\n얼큰꽃게어묵꼬치(#) : 6,000원",
-            "dinner": "사리곰탕 : 6,000원\n단호박카레(#) : 3,000원"
-          }
-        }
-      ]
-    },
     "2026-11-20": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-20&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "소떡소떡채소볶음 : 3,000원",
             "lunch": "안동식찜닭 : 6,000원\n제육감자고추장찌개 : 3,000원\n쇠고기마파두부덮밥 : 5,500원",
             "dinner": "사천식제육강정 : 6,000원\n버섯전골(#) : 3,000원"
+          }
+        }
+      ]
+    },
+    "2026-11-21": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-21&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "갈비탕 : 6,500원",
+            "dinner": "순살데리치킨 : 6,500원"
           }
         }
       ]
