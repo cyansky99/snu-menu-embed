@@ -1,36 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-11-21T16:49:03+09:00",
+  "fetchedAt": "2026-11-22T02:00:03+09:00",
   "days": {
-    "2026-11-21": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-21&orderby=DESC",
-      "restaurants": [
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          }
-        },
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "갈비탕 : 6,500원",
-            "dinner": "순살데리치킨 : 6,500원"
-          }
-        }
-      ]
-    },
     "2026-11-22": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-22&orderby=DESC",
       "restaurants": [
@@ -56,6 +27,35 @@
             "breakfast": "",
             "lunch": "",
             "dinner": ""
+          }
+        }
+      ]
+    },
+    "2026-11-23": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-23&orderby=DESC",
+      "restaurants": [
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "맑은수육곰탕&오징어미나리무침 : 7,000원\n김치볶음밥&뿌링클치킨 : 6,000원\n<든든한끼샐러드코너>\n핑크솔트돼지바베큐샐러드(채식변경가능) : 9,000원",
+            "dinner": ""
+          }
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "<셀프코너> 7,000원\n잡곡밥\n우거지장터국밥\n직화제육볶음\n시즈닝동글가라아게\n마라로제크림수제비뇨끼\n짜사이무침\n포기김치\n그린샐러드\n오늘의차",
+            "dinner": "<셀프코너> 7,000원\n목살필라프\n유부팽이미소국\n크리미어니언순살치킨\n미트볼데리야끼조림\n오복채무침\n초코마들렌\n포기김치\n그린샐러드\n오늘의차"
+          }
+        },
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "참치김치찌개(#) : 3,000원",
+            "lunch": "목살슬라이스덮밥 : 6,000원\n꽁치무조림(#) : 3,000원\n차돌양지쌀국수 : 6,500원",
+            "dinner": "마늘닭강정 : 6,000원\n무장국 : 3,000원"
           }
         }
       ]
