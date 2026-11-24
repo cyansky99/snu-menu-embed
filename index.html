@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light">
     <title>서울대 식단</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <script type="module" src="assets/app.js"></script>
+    <link rel="stylesheet" href="assets/style.css?v=card-spacing-13">
+    <script type="module" src="assets/app.js?v=card-spacing-13"></script>
   </head>
   <body>
     <main class="widget" aria-label="서울대학교 식단">
       <header class="heading">
         <h1>서울대 식단</h1>
-        <p id="context"></p>
+        <nav class="meal-navigation" aria-label="끼니 선택">
+          <button id="previous-meal" class="meal-arrow" type="button" aria-label="이전 끼니" aria-controls="restaurants" disabled>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m10 4-4 4 4 4"/></svg>
+          </button>
+          <p id="context" aria-live="polite" aria-atomic="true"></p>
+          <button id="next-meal" class="meal-arrow" type="button" aria-label="다음 끼니" aria-controls="restaurants" disabled>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg>
+          </button>
+        </nav>
       </header>
       <p id="status" role="status">메뉴를 불러오는 중입니다.</p>
       <div id="restaurants" class="restaurants"></div>

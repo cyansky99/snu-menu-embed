@@ -1,5 +1,17 @@
-export const restaurants = ["3식당", "두레미담", "학생회관식당"];
 export const mealLabels = { breakfast: "아침", lunch: "점심", dinner: "저녁" };
+
+export const restaurantColors = {
+  "학생회관식당": "#4c83c3",
+  "자하연식당": "#8b5fc7",
+  "예술계식당": "#cc6644",
+  "두레미담": "#d39435",
+  "동원관식당": "#718b36",
+  "기숙사식당": "#258d9e",
+  "3식당": "#32936f",
+  "302동식당": "#6263c2",
+  "301동식당": "#aa7049",
+  "* 220동식당": "#a34e55",
+};
 
 export function displayContext(now = new Date()) {
   const parts = Object.fromEntries(new Intl.DateTimeFormat("en-CA", {
@@ -17,9 +29,19 @@ export function displayContext(now = new Date()) {
   return { date, meal, tomorrow: hour >= 19 };
 }
 
+export function adjacentMeal(context, offset) {
+  const meals = ["breakfast", "lunch", "dinner"];
+  const index = meals.indexOf(context.meal) + offset;
+  const date = new Date(`${context.date}T12:00:00Z`);
+  date.setUTCDate(date.getUTCDate() + Math.floor(index / meals.length));
+  return { date: date.toISOString().slice(0, 10), meal: meals[((index % 3) + 3) % 3] };
+}
+
 export function parseLine(line) {
+  const noMeat = line.includes("(#)");
+  line = line.replaceAll("(#)", "").trim();
   const section = line.match(/^<([^>]+)>\s*(.*)$/);
-  if (section) return { name: section[1], price: section[2], section: true };
+  if (section) return { name: section[1], price: section[2], section: true, noMeat };
   const priced = line.match(/^(.*?)\s*[:：]\s*([\d,]+\s*원)\s*$/);
-  return { name: priced ? priced[1] : line, price: priced ? priced[2] : "", section: false };
+  return { name: priced ? priced[1] : line, price: priced ? priced[2] : "", section: false, noMeat };
 }

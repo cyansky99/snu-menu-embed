@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch today and tomorrow's SNU cafeteria menus for the static widget.
+"""Fetch yesterday, today, and tomorrow's menus for adjacent-meal navigation.
 
 The source is the official SNU Cooperative food menu page:
 https://snuco.snu.ac.kr/foodmenu/
@@ -23,12 +23,12 @@ from zoneinfo import ZoneInfo
 
 SOURCE_URL = "https://snuco.snu.ac.kr/foodmenu/"
 SEOUL = ZoneInfo("Asia/Seoul")
+EXCLUDED_RESTAURANTS = {"버거운버거", "공대간이식당", "75-1동 4층 푸드코트"}
 MEAL_LABELS = {
     "breakfast": "아침",
     "lunch": "점심",
     "dinner": "저녁",
 }
-DISPLAY_RESTAURANTS = ("3식당", "두레미담", "학생회관식당")
 
 
 @dataclass(frozen=True)
@@ -37,12 +37,6 @@ class RestaurantMenu:
     breakfast: str
     lunch: str
     dinner: str
-
-
-@dataclass(frozen=True)
-class DisplayMenu:
-    name: str
-    menu: str
 
 
 def _class_names(attributes: list[tuple[str, str | None]]) -> set[str]:
@@ -182,52 +176,175 @@ def _restaurant_base_name(name: str) -> str:
     return re.sub(r"\s*\(\d{3,4}-\d{4}\)\s*$", "", name).strip()
 
 
-def _duremidam_self_service_only(text: str) -> str:
-    lines = text.splitlines()
-    start: int | None = None
-    end = len(lines)
-
-    for index, line in enumerate(lines):
-        compact = re.sub(r"\s+", "", line)
-        if start is None and compact.startswith("<셀프코너>"):
-            start = index
-        elif start is not None and compact.startswith("<주문식메뉴>"):
-            end = index
-            break
-
-    if start is None:
-        return ""
-    return "\n".join(lines[start:end]).strip()
+OPERATING_HOURS_LINE = re.compile(r"^\s*※?\s*운영\s*시간")
+CONGESTION_LINE = re.compile(r"^\s*※?\s*혼잡\s*시간")
+OPERATING_HOURS_RANGE = re.compile(
+    r"^\s*※?\s*운영\s*시간\s*[:：]?\s*"
+    r"([01]?\d|2[0-3])\s*:\s*([0-5]\d)\s*[~～–-]\s*"
+    r"([01]?\d|2[0-3])\s*:\s*([0-5]\d)\s*$"
+)
+UNTIL_SOLD_OUT = re.compile(
+    r"^\s*※?\s*([01]?\d|2[0-3])\s*:\s*([0-5]\d)\s*[~～–-]\s*"
+    r"준비\s*수량\s*소진\s*시\s*까지\s*$"
+)
 
 
-def _menu_items_only(text: str) -> str:
-    """Remove hours, congestion notes, and other informational footnotes."""
-    return "\n".join(
-        line for line in text.splitlines() if line and not line.lstrip().startswith("※")
-    ).strip()
+def operating_hours(restaurant: RestaurantMenu, meal: str) -> str:
+    """Return one unambiguous range; retain corner-specific/unknown hours in text."""
+    if _restaurant_base_name(restaurant.name) == "301동식당" and meal == "breakfast":
+        matches = [UNTIL_SOLD_OUT.fullmatch(line)
+                   for line in restaurant.breakfast.splitlines()]
+        starts = {f"{int(match[1]):02}:{int(match[2]):02}" for match in matches if match}
+        if len(starts) == 1:
+            return f"{next(iter(starts))} – 소진 시"
+    lines = [line for line in getattr(restaurant, meal).splitlines()
+             if OPERATING_HOURS_LINE.match(line)]
+    ranges = set()
+    for line in lines:
+        match = OPERATING_HOURS_RANGE.fullmatch(line)
+        if not match:
+            return ""
+        start_h, start_m, end_h, end_m = map(int, match.groups())
+        ranges.add(f"{start_h:02}:{start_m:02} – {end_h:02}:{end_m:02}")
+    return next(iter(ranges)) if len(ranges) == 1 else ""
 
 
-def select_display_menus(
-    menus: Sequence[RestaurantMenu], meal: str
-) -> list[DisplayMenu]:
-    by_name = {_restaurant_base_name(menu.name): menu for menu in menus}
-    missing = [name for name in DISPLAY_RESTAURANTS if name not in by_name]
-    if missing:
-        raise ValueError(f"Could not find required restaurants: {', '.join(missing)}")
+def clean_menu_text(restaurant: RestaurantMenu, meal: str) -> str:
+    name = _restaurant_base_name(restaurant.name)
+    text = "\n".join(line for line in getattr(restaurant, meal).splitlines()
+                     if not CONGESTION_LINE.match(line))
+    if name == "자하연식당 3층":
+        text = re.sub(r"<\s*뷔페\s*특성상[^>]*>", "", text, flags=re.DOTALL)
+        text = re.sub(r"<\s*\+\s*세미뷔페\s*>", "<세미뷔페>", text)
+    if name == "3식당":
+        text = "\n".join(line for line in text.splitlines()
+                         if not ("든든한끼샐러드" in re.sub(r"\s+", "", line)
+                                 and "항상채식변경가능" in re.sub(r"\s+", "", line)))
+    if name == "301동식당":
+        lines = []
+        in_cafe = False
+        for line in text.splitlines():
+            heading = re.match(r"^\s*<([^>]+)>", line)
+            if heading:
+                in_cafe = "카페" in heading[1]
+            if in_cafe:
+                continue
+            if meal == "lunch" and re.match(r"^\s*※\s*요일별\s*샐러드\s*종류\s*변경", line):
+                continue
+            if meal == "breakfast" and line.lstrip().startswith("※") and re.search(
+                r"take\s*-?\s*out|학생증|수령", line, flags=re.IGNORECASE
+            ):
+                continue
+            lines.append(line)
+        text = "\n".join(lines)
+    return text.strip()
 
-    selected: list[DisplayMenu] = []
-    for restaurant_name in DISPLAY_RESTAURANTS:
-        restaurant = by_name[restaurant_name]
-        value = getattr(restaurant, meal)
-        if restaurant_name == "두레미담":
-            value = _duremidam_self_service_only(value)
-        selected.append(
-            DisplayMenu(
-                name=_restaurant_base_name(restaurant.name),
-                menu=_menu_items_only(value),
-            )
-        )
-    return selected
+
+def display_menu_text(restaurant: RestaurantMenu, meal: str) -> str:
+    name = _restaurant_base_name(restaurant.name)
+    text = clean_menu_text(restaurant, meal)
+    if name == "자하연식당 3층" and meal == "dinner":
+        return "\n".join(line for line in text.splitlines()
+                         if not re.match(r"^\s*※\s*저녁\s*단체예약문의", line)).strip()
+    if name == "두레미담":
+        # Only show the self-service section, never the made-to-order menu.
+        lines: list[str] = []
+        in_self_service = False
+        for line in text.splitlines():
+            compact = re.sub(r"\s+", "", line)
+            if compact.startswith("<셀프코너>"):
+                in_self_service = True
+            elif in_self_service and compact.startswith("<주문식메뉴>"):
+                break
+            if in_self_service and not line.lstrip().startswith("※"):
+                lines.append(line)
+        return "\n".join(lines).strip()
+    if name == "학생회관식당":
+        return "\n".join(
+            line for line in text.splitlines()
+            if not line.lstrip().startswith("※")
+        ).strip()
+    if operating_hours(restaurant, meal):
+        return "\n".join(line for line in text.splitlines()
+                         if not OPERATING_HOURS_LINE.match(line)
+                         and not (name == "301동식당" and meal == "breakfast"
+                                  and UNTIL_SOLD_OUT.fullmatch(line))).strip()
+    return text
+
+
+def menu_sections(restaurant: RestaurantMenu, meal: str) -> list[dict]:
+    """Keep hours attached to their own corner, rather than merging time ranges."""
+    if meal != "lunch" or _restaurant_base_name(restaurant.name) not in {
+        "예술계식당", "301동식당"
+    }:
+        return []
+    groups: list[tuple[str, list[str]]] = []
+    for line in clean_menu_text(restaurant, meal).splitlines():
+        if CONGESTION_LINE.match(line):
+            continue
+        heading = re.match(r"^\s*<([^>]+)>\s*(.*)$", line)
+        if heading:
+            groups.append((heading[1].strip(), []))
+            if heading[2]:
+                groups[-1][1].append(heading[2])
+        elif groups:
+            groups[-1][1].append(line)
+        elif line.strip():
+            return []  # Unrecognized layout: fall back to the complete menu text.
+
+    titles = {"TAKE-OUT": "테이크아웃", "301동1층 교직원전용식당": "1층 교직원식당",
+              "TAKE-OUT 카페 301동": "카페"}
+    sections = []
+    for title, lines in groups:
+        text = "\n".join(lines)
+        hours = operating_hours(RestaurantMenu("", "", text, ""), "lunch")
+        menu_lines = []
+        access_hours = []
+        for line in lines:
+            if hours and OPERATING_HOURS_LINE.match(line):
+                continue
+            access = re.match(r"^\s*※\s*(교직원|학생\s*및\s*대학원생)\s*이용시간\s*[:：]?\s*(.+)$", line)
+            if access:
+                value = operating_hours(RestaurantMenu("", "", f"운영시간: {access[2]}", ""), "lunch")
+                if value:
+                    access_hours.append({"label": access[1], "hours": value})
+                    continue
+            menu_lines.append(line)
+        sections.append({"name": titles.get(title, title), "menu": "\n".join(menu_lines).strip(),
+                         "hours": hours, "accessHours": access_hours})
+    return sections
+
+
+def build_restaurants(menus: Sequence[RestaurantMenu]) -> list[dict]:
+    restaurants = []
+    for restaurant in menus:
+        name = _restaurant_base_name(restaurant.name)
+        if name.lstrip("*").strip() in EXCLUDED_RESTAURANTS:
+            continue
+        meals = {meal: display_menu_text(restaurant, meal) for meal in MEAL_LABELS}
+        restaurants.append({
+            "name": name,
+            "meals": meals,
+            "hours": {meal: operating_hours(restaurant, meal) if meals[meal] else ""
+                      for meal in MEAL_LABELS},
+            "sections": {meal: menu_sections(restaurant, meal) for meal in MEAL_LABELS},
+        })
+
+    floor_names = ["자하연식당 2층", "자하연식당 3층"]
+    floors = {r["name"]: r for r in restaurants if r["name"] in floor_names}
+    if floors:
+        combined = {"name": "자하연식당", "meals": {}, "hours": {}, "sections": {}}
+        for meal in MEAL_LABELS:
+            sections = [{"name": name.rsplit(" ", 1)[1], "menu": floors[name]["meals"][meal],
+                         "hours": floors[name]["hours"][meal], "accessHours": []}
+                        for name in floor_names if name in floors]
+            combined["meals"][meal] = "\n".join(s["menu"] for s in sections if s["menu"])
+            combined["hours"][meal] = ""
+            combined["sections"][meal] = sections if combined["meals"][meal] else []
+        first = next(i for i, r in enumerate(restaurants) if r["name"] in floors)
+        restaurants = [r for r in restaurants if r["name"] not in floors]
+        restaurants.insert(first, combined)
+    return restaurants
 
 
 def parse_date(value: str) -> date:
@@ -240,7 +357,7 @@ def parse_date(value: str) -> date:
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--date", type=parse_date, help="first date (default: today in Seoul)"
+        "--date", type=parse_date, help="center date (default: today in Seoul)"
     )
     parser.add_argument(
         "--output",
@@ -251,32 +368,14 @@ def main(argv: Sequence[str] | None = None) -> int:
     first_date = args.date or datetime.now(SEOUL).date()
     days = {}
     try:
-        for offset in range(2):
+        for offset in (-1, 0, 1):
             menu_date = first_date + timedelta(days=offset)
             html, source_url = fetch_menu_html(menu_date)
             menus = parse_menu_html(html)
 
-            # Some restaurants may be absent from the source on holidays.
-            present = {_restaurant_base_name(menu.name) for menu in menus}
-            menus.extend(
-                RestaurantMenu(name, "", "", "")
-                for name in DISPLAY_RESTAURANTS
-                if name not in present
-            )
-            selected = {
-                meal: select_display_menus(menus, meal) for meal in MEAL_LABELS
-            }
             days[menu_date.isoformat()] = {
                 "source": source_url,
-                "restaurants": [
-                    {
-                        "name": name,
-                        "meals": {
-                            meal: selected[meal][index].menu for meal in MEAL_LABELS
-                        },
-                    }
-                    for index, name in enumerate(DISPLAY_RESTAURANTS)
-                ],
+                "restaurants": build_restaurants(menus),
             }
 
         payload = {
