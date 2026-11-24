@@ -1,6 +1,15 @@
 .settings-link.is-active { color: var(--text); background: var(--hover); }
 .settings-link.is-active svg path { fill: currentColor; }
 .settings-link.is-active svg circle { fill: var(--hover); stroke: var(--hover); }
+.settings-url-notice { margin: -4px 0 14px; color: var(--muted); font-size: 11px; line-height: 18px; }
+.settings-url-row { display: flex; align-items: center; flex-wrap: wrap; gap: 2px 4px; }
+.copy-menu-url { display: grid; place-items: center; width: 24px; height: 24px; padding: 0; border: 0; border-radius: 5px; background: transparent; color: var(--muted); cursor: pointer; }
+.copy-menu-url svg { display: block; width: 13px; height: 13px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.copy-menu-url:hover { background: var(--hover); color: var(--text); }
+.copy-menu-url:focus-visible { outline: 2px solid var(--muted); outline-offset: 2px; }
+.copy-menu-url:disabled { opacity: .5; cursor: default; }
+.copy-url-feedback { margin-left: 3px; }
+.copy-url-fallback { width: 100%; margin-top: 6px; padding: 6px 8px; border: 1px solid var(--border); border-radius: 5px; background: var(--card); color: var(--text); font: inherit; }
 .other-restaurants-section { margin: 0; }
 .selection-divider { display: flex; align-items: center; gap: 12px; padding: 20px 0; }
 .selection-divider::before { content: ""; height: 1px; min-width: 16px; flex: 1; background: var(--border); }

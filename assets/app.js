@@ -13,6 +13,10 @@ const otherSection = document.querySelector("#other-restaurants-section");
 const configurationLink = document.querySelector("#configuration-link");
 const addAllButton = document.querySelector("#add-all-restaurants");
 const removeAllButton = document.querySelector("#remove-all-restaurants");
+const copyUrlButton = document.querySelector("#copy-menu-url");
+const copyUrlFeedback = document.querySelector("#copy-url-feedback");
+const copyUrlFallback = document.querySelector("#copy-url-fallback");
+let copyFeedbackTimer;
 const params = new URLSearchParams(location.search);
 const themeModes = ["auto", "light", "dark"];
 const themeLabels = { auto: "Auto", light: "Light", dark: "Dark" };
@@ -139,6 +143,12 @@ function appendSections(parent, sections) {
   });
 }
 
+function currentRestaurantGroups(context) {
+  // Settings only needs the catalog and URL, never the menu payload.
+  const rows = settingsMode ? restaurantCatalog : data?.days?.[context.date]?.restaurants || [];
+  return restaurantGroups(rows, params);
+}
+
 function saveSelection(ids, buttonId, message, fallbackId = buttonId) {
   const context = mealWindow[selectedOffset + 1];
   params.set("restaurants", ids.join(","));
@@ -161,7 +171,7 @@ function saveSelection(ids, buttonId, message, fallbackId = buttonId) {
 function updateSelection(id) {
   if (!settingsMode) return;
   const context = mealWindow[selectedOffset + 1];
-  const groups = restaurantGroups(data?.days?.[context.date]?.restaurants || [], params);
+  const groups = currentRestaurantGroups(context);
   const removing = groups.ids.includes(id);
   const ids = removing ? groups.ids.filter(value => value !== id) : [...groups.ids, id];
   const name = restaurantCatalog.find(entry => entry.id === id)?.name || "식당";
@@ -171,7 +181,7 @@ function updateSelection(id) {
 function reorderSelection(id, direction) {
   if (!settingsMode) return;
   const context = mealWindow[selectedOffset + 1];
-  const groups = restaurantGroups(data?.days?.[context.date]?.restaurants || [], params);
+  const groups = currentRestaurantGroups(context);
   const ids = moveRestaurant(groups.ids, id, direction);
   if (ids === groups.ids) return;
   const name = restaurantCatalog.find(entry => entry.id === id)?.name || "식당";
@@ -179,9 +189,9 @@ function reorderSelection(id, direction) {
 }
 
 function updateAllSelections(add) {
-  if (!settingsMode || !data) return;
+  if (!settingsMode) return;
   const context = mealWindow[selectedOffset + 1];
-  const groups = restaurantGroups(data.days?.[context.date]?.restaurants || [], params);
+  const groups = currentRestaurantGroups(context);
   const ids = add ? [...groups.ids, ...restaurantCatalog.map(entry => entry.id).filter(id => !groups.ids.includes(id))] : [];
   saveSelection(ids, add ? "add-all-restaurants" : "remove-all-restaurants",
     add ? `${ids.length}개 식당을 모두 추가했습니다.` : "모든 식당을 제외했습니다.",
@@ -244,6 +254,11 @@ function appendSelectionControls(card, heading, restaurant, selected, selectedId
 }
 
 function render() {
+  if (copyUrlFeedback) {
+    clearTimeout(copyFeedbackTimer);
+    copyUrlFeedback.textContent = "";
+    copyUrlFallback.hidden = true;
+  }
   syncWindow();
   const context = mealWindow[selectedOffset + 1];
   const dateLabel = new Intl.DateTimeFormat("ko-KR", {
@@ -275,18 +290,18 @@ function render() {
   previousButton.disabled = !settingsMode && selectedOffset === -1;
   nextButton.disabled = !settingsMode && selectedOffset === 1;
   const day = data?.days?.[context.date];
-  const groups = restaurantGroups(day?.restaurants || [], params);
+  const groups = currentRestaurantGroups(context);
   const destination = new URL(settingsMode ? "./index.html" : "./settings.html", location.href);
   // Carry the current selection, order and meal into settings and back.
-  if (day || params.has("restaurants")) destination.searchParams.set("restaurants", groups.ids.join(","));
+  if (settingsMode || day || params.has("restaurants")) destination.searchParams.set("restaurants", groups.ids.join(","));
   destination.searchParams.set("view", `${context.date}/${context.meal}`);
   if (params.has("theme")) destination.searchParams.set("theme", window.menuTheme.get());
   configurationLink.href = destination.href;
-  statusElement.hidden = Boolean(day) && !failed;
-  statusElement.textContent = failed
+  statusElement.hidden = settingsMode || (Boolean(day) && !failed);
+  statusElement.textContent = settingsMode ? "" : failed
     ? (day ? "메뉴를 새로 불러오지 못했습니다. 마지막 수집 내용을 표시합니다." : "메뉴를 불러오지 못했습니다.")
     : data ? "해당 날짜의 메뉴가 아직 준비되지 않았습니다." : "메뉴를 불러오는 중입니다.";
-  if (day && !groups.selected.length && !failed) {
+  if ((settingsMode || day) && !groups.selected.length && !failed) {
     statusElement.hidden = false;
     statusElement.textContent = settingsMode ? "아래 + 버튼으로 식당을 추가하세요." : "표시할 식당이 없습니다.";
   }
@@ -330,9 +345,9 @@ function render() {
   groups.selected.forEach(restaurant => renderCard(restaurant, container));
   if (settingsMode) {
     otherSection.hidden = false;
-    addAllButton.disabled = !data || !groups.remaining.length;
-    removeAllButton.disabled = !data || !groups.ids.length;
-    if (data) groups.remaining.forEach(restaurant => renderCard(restaurant, otherContainer));
+    addAllButton.disabled = !groups.remaining.length;
+    removeAllButton.disabled = !groups.ids.length;
+    groups.remaining.forEach(restaurant => renderCard(restaurant, otherContainer));
   }
   cardContainers.forEach(group => {
     layoutObserver?.observe(group);
@@ -342,7 +357,7 @@ function render() {
 }
 
 async function refresh() {
-  if (loading) return;
+  if (settingsMode || loading) return;
   loading = true;
   lastAttempt = Date.now();
   try {
@@ -366,7 +381,7 @@ async function refresh() {
 function tick() {
   const changed = syncWindow();
   if (changed) render();
-  if (changed || Date.now() - lastAttempt >= 5 * 60 * 1000) refresh();
+  if (!settingsMode && (changed || Date.now() - lastAttempt >= 5 * 60 * 1000)) refresh();
 }
 
 function navigate(direction) {
@@ -390,13 +405,38 @@ function navigate(direction) {
   render();
 }
 
+async function copyMenuUrl() {
+  if (!settingsMode || copyUrlButton.disabled) return;
+  const url = new URL(configurationLink.href);
+  // A saved embed should open at the current meal, not a temporary preview slot.
+  url.searchParams.delete("view");
+  clearTimeout(copyFeedbackTimer);
+  copyUrlFeedback.textContent = "";
+  copyUrlFallback.hidden = true;
+  copyUrlButton.disabled = true;
+  try {
+    await navigator.clipboard.writeText(url.href);
+    copyUrlFeedback.textContent = "복사했어요";
+    copyFeedbackTimer = setTimeout(() => { copyUrlFeedback.textContent = ""; }, 2500);
+  } catch {
+    copyUrlFeedback.textContent = "아래 주소를 직접 복사해 주세요";
+    copyUrlFallback.value = url.href;
+    copyUrlFallback.hidden = false;
+    copyUrlFallback.focus();
+    copyUrlFallback.select();
+  } finally {
+    copyUrlButton.disabled = false;
+  }
+}
+
+copyUrlButton?.addEventListener("click", copyMenuUrl);
 previousButton.addEventListener("click", () => navigate(-1));
 nextButton.addEventListener("click", () => navigate(1));
 addAllButton?.addEventListener("click", () => updateAllSelections(true));
 removeAllButton?.addEventListener("click", () => updateAllSelections(false));
 
 render();
-refresh();
+if (!settingsMode) refresh();
 setInterval(tick, 15000);
 document.addEventListener("visibilitychange", () => {
   if (!document.hidden) tick();

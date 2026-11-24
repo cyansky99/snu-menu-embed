@@ -8,8 +8,8 @@
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=k15">
     <script src="assets/theme.js?v=theme-24"></script>
     <link rel="stylesheet" href="assets/style.css?v=theme-24">
-    <link rel="stylesheet" href="assets/settings.css?v=toggle-contrast-27">
-    <script type="module" src="assets/app.js?v=theme-24"></script>
+    <link rel="stylesheet" href="assets/settings.css?v=settings-copy-29">
+    <script type="module" src="assets/app.js?v=settings-copy-29"></script>
   </head>
   <body data-page="settings">
     <main class="widget" aria-label="서울대학교 식단">
@@ -30,8 +30,18 @@
           </button>
         </nav>
       </header>
+      <div class="settings-url-notice">
+        <div class="settings-url-row">
+          <span>설정은 URL에 저장됩니다</span>
+          <button id="copy-menu-url" class="copy-menu-url" type="button" aria-label="설정된 식단 주소 복사" title="식단 주소 복사">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17H7a5 5 0 0 1 0-10h2m6 0h2a5 5 0 0 1 0 10h-2M8 12h8"/></svg>
+          </button>
+          <span id="copy-url-feedback" class="copy-url-feedback" role="status" aria-live="polite"></span>
+        </div>
+        <input id="copy-url-fallback" class="copy-url-fallback" type="text" aria-label="직접 복사할 식단 주소" readonly hidden>
+      </div>
       <p id="settings-announcement" class="settings-announcement" role="status" aria-live="polite"></p>
-      <p id="status" role="status">메뉴를 불러오는 중입니다.</p>
+      <p id="status" role="status" hidden></p>
       <div id="restaurants" class="restaurants" aria-label="현재 표시 중인 식당"></div>
       <section id="other-restaurants-section" class="other-restaurants-section" aria-label="선택하지 않은 식당">
         <div class="selection-divider">
