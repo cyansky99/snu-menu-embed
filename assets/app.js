@@ -18,8 +18,8 @@ const copyUrlFeedback = document.querySelector("#copy-url-feedback");
 const copyUrlFallback = document.querySelector("#copy-url-fallback");
 let copyFeedbackTimer;
 const params = new URLSearchParams(location.search);
-const themeModes = ["auto", "light", "dark"];
-const themeLabels = { auto: "Auto", light: "Light", dark: "Dark" };
+const themeModes = ["auto", "light", "dark", "christmas"];
+const themeLabels = { auto: "Auto", light: "Light", dark: "Dark", christmas: "Christmas" };
 let initialView = params.get("view");
 const cardContainers = [container, otherContainer].filter(Boolean);
 // Set false to return to the original aligned-row layout.
