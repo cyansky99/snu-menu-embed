@@ -24,7 +24,14 @@
   --toggle-hover-bg: #cedec6;
   --toggle-hover-text: #315642;
   --placeholder: #e8e5d7;
+  min-height: 100vh;
+  min-height: 100dvh;
+  /* Size the glow to the viewport, independently of the menu's content height. */
   background-image: radial-gradient(ellipse at 50% 0, #285c44, transparent 75%);
+  background-size: 100% 100vh;
+  background-size: 100% 100dvh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 :root[data-theme="christmas"] body::before {
