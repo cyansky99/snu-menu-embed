@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Fetch yesterday, today, and tomorrow's menus for adjacent-meal navigation.
 
-The source is the official SNU Cooperative food menu page:
+Sources are the official SNU Cooperative and residence hall food menu pages:
 https://snuco.snu.ac.kr/foodmenu/
+https://snudorm.snu.ac.kr/foodmenu/
 """
 
 from __future__ import annotations
@@ -22,8 +23,9 @@ from zoneinfo import ZoneInfo
 
 
 SOURCE_URL = "https://snuco.snu.ac.kr/foodmenu/"
+DORM_SOURCE_URL = "https://snudorm.snu.ac.kr/foodmenu/"
 SEOUL = ZoneInfo("Asia/Seoul")
-EXCLUDED_RESTAURANTS = {"버거운버거", "공대간이식당", "75-1동 4층 푸드코트"}
+EXCLUDED_RESTAURANTS = {"버거운버거", "공대간이식당", "75-1동 4층 푸드코트", "220동식당"}
 MEAL_LABELS = {
     "breakfast": "아침",
     "lunch": "점심",
@@ -155,9 +157,11 @@ def parse_menu_html(html: str) -> list[RestaurantMenu]:
     return parser.rows
 
 
-def fetch_menu_html(menu_date: date, timeout: float = 20.0) -> tuple[str, str]:
+def fetch_menu_html(
+    menu_date: date, timeout: float = 20.0, *, source_url: str = SOURCE_URL
+) -> tuple[str, str]:
     query = urlencode({"date": menu_date.isoformat(), "orderby": "DESC"})
-    url = f"{SOURCE_URL}?{query}"
+    url = f"{source_url}?{query}"
     request = Request(
         url,
         headers={
@@ -174,6 +178,13 @@ def fetch_menu_html(menu_date: date, timeout: float = 20.0) -> tuple[str, str]:
 
 def _restaurant_base_name(name: str) -> str:
     return re.sub(r"\s*\(\d{3,4}-\d{4}\)\s*$", "", name).strip()
+
+
+def parse_ourhome_menu(html: str) -> RestaurantMenu:
+    for restaurant in parse_menu_html(html):
+        if re.sub(r"\s+", "", restaurant.name) == "아워홈(901동)":
+            return RestaurantMenu("아워홈", restaurant.breakfast, restaurant.lunch, restaurant.dinner)
+    raise ValueError("Could not find Ourhome (901) on the residence hall menu page.")
 
 
 OPERATING_HOURS_LINE = re.compile(r"^\s*※?\s*운영\s*시간")
@@ -213,6 +224,15 @@ def clean_menu_text(restaurant: RestaurantMenu, meal: str) -> str:
     name = _restaurant_base_name(restaurant.name)
     text = "\n".join(line for line in getattr(restaurant, meal).splitlines()
                      if not CONGESTION_LINE.match(line))
+    if name == "아워홈" and meal == "breakfast":
+        # Split food lists, preserving numeric commas such as 5,000원.
+        text = "\n".join(
+            part.strip()
+            for line in text.splitlines()
+            for part in (re.split(r"(?<!\d),|,(?!\d)|，", line)
+                         if not line.lstrip().startswith("※") else [line])
+            if part.strip()
+        )
     if name == "자하연식당 3층":
         text = re.sub(r"<\s*뷔페\s*특성상[^>]*>", "", text, flags=re.DOTALL)
         text = re.sub(r"<\s*\+\s*세미뷔페\s*>", "<세미뷔페>", text)
@@ -372,10 +392,19 @@ def main(argv: Sequence[str] | None = None) -> int:
             menu_date = first_date + timedelta(days=offset)
             html, source_url = fetch_menu_html(menu_date)
             menus = parse_menu_html(html)
+            dorm_html, dorm_source_url = fetch_menu_html(menu_date, source_url=DORM_SOURCE_URL)
+            ourhome = parse_ourhome_menu(dorm_html)
+            restaurants = build_restaurants(menus)
+            for restaurant in restaurants:
+                restaurant["source"] = source_url
+            dorm_restaurants = build_restaurants([ourhome])
+            for restaurant in dorm_restaurants:
+                restaurant["source"] = dorm_source_url
 
             days[menu_date.isoformat()] = {
                 "source": source_url,
-                "restaurants": build_restaurants(menus),
+                "sources": {"cooperative": source_url, "dormitory": dorm_source_url},
+                "restaurants": restaurants + dorm_restaurants,
             }
 
         payload = {

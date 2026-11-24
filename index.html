@@ -3,15 +3,22 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="light dark">
     <title>서울대 식단</title>
-    <link rel="stylesheet" href="assets/style.css?v=card-spacing-13">
-    <script type="module" src="assets/app.js?v=card-spacing-13"></script>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=k15">
+    <script src="assets/theme.js?v=theme-24"></script>
+    <link rel="stylesheet" href="assets/style.css?v=theme-24">
+    <script type="module" src="assets/app.js?v=theme-24"></script>
   </head>
   <body>
     <main class="widget" aria-label="서울대학교 식단">
       <header class="heading">
-        <h1>서울대 식단</h1>
+        <div class="site-title">
+          <h1>서울대 식단</h1>
+          <a id="configuration-link" class="settings-link" href="./settings.html" aria-label="식당 선택 및 순서 설정" title="식당 선택 및 순서 설정">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4l1 3 2 1 3-1 2 4-2 2v2l2 2-2 4-3-1-2 1-1 3h-4l-1-3-2-1-3 1-2-4 2-2v-2L2 9l2-4 3 1 2-1z"/><circle cx="12" cy="12" r="3"/></svg>
+          </a>
+        </div>
         <nav class="meal-navigation" aria-label="끼니 선택">
           <button id="previous-meal" class="meal-arrow" type="button" aria-label="이전 끼니" aria-controls="restaurants" disabled>
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m10 4-4 4 4 4"/></svg>
@@ -26,9 +33,12 @@
       <div id="restaurants" class="restaurants"></div>
       <noscript>식단을 보려면 JavaScript를 활성화해 주세요.</noscript>
       <footer class="attribution">
-        made by <a href="https://github.com/cyansky99" target="_blank" rel="noopener noreferrer">cyansky</a>
-        <span aria-hidden="true"> · </span>
-        <a href="https://snuco.snu.ac.kr/foodmenu/" target="_blank" rel="noopener noreferrer" aria-label="식단 출처: 서울대학교 생활협동조합">source</a>
+        <span>made by <a href="https://github.com/cyansky99" target="_blank" rel="noopener noreferrer">cyansky</a></span>
+        <span class="menu-sources">출처:
+          <a id="cooperative-source" href="https://snuco.snu.ac.kr/foodmenu/" target="_blank" rel="noopener noreferrer" aria-label="생협 식당 메뉴 출처: 서울대학교 생활협동조합">생협</a>
+          <span aria-hidden="true"> · </span>
+          <a id="dormitory-source" href="https://snudorm.snu.ac.kr/foodmenu/" target="_blank" rel="noopener noreferrer" aria-label="아워홈 메뉴 출처: 관악학생생활관" title="아워홈 식단">관악학생생활관</a>
+        </span>
       </footer>
     </main>
   </body>

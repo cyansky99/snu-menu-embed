@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>식당 설정 · 서울대 식단</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=k15">
+    <script src="assets/theme.js?v=theme-24"></script>
+    <link rel="stylesheet" href="assets/style.css?v=theme-24">
+    <link rel="stylesheet" href="assets/settings.css?v=toggle-contrast-27">
+    <script type="module" src="assets/app.js?v=theme-24"></script>
+  </head>
+  <body data-page="settings">
+    <main class="widget" aria-label="서울대학교 식단">
+      <header class="heading">
+        <div class="site-title">
+          <h1>서울대 식단</h1>
+          <a id="configuration-link" class="settings-link is-active" href="./index.html" aria-label="설정 닫고 식단으로 돌아가기" title="설정 닫기">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 2h4l1 3 2 1 3-1 2 4-2 2v2l2 2-2 4-3-1-2 1-1 3h-4l-1-3-2-1-3 1-2-4 2-2v-2L2 9l2-4 3 1 2-1z"/><circle cx="12" cy="12" r="3"/></svg>
+          </a>
+        </div>
+        <nav class="meal-navigation" aria-label="테마 선택">
+          <button id="previous-meal" class="meal-arrow" type="button" aria-label="이전 테마" aria-controls="context" disabled>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m10 4-4 4 4 4"/></svg>
+          </button>
+          <p id="context" aria-live="polite" aria-atomic="true"></p>
+          <button id="next-meal" class="meal-arrow" type="button" aria-label="다음 테마" aria-controls="context" disabled>
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 4 4 4-4 4"/></svg>
+          </button>
+        </nav>
+      </header>
+      <p id="settings-announcement" class="settings-announcement" role="status" aria-live="polite"></p>
+      <p id="status" role="status">메뉴를 불러오는 중입니다.</p>
+      <div id="restaurants" class="restaurants" aria-label="현재 표시 중인 식당"></div>
+      <section id="other-restaurants-section" class="other-restaurants-section" aria-label="선택하지 않은 식당">
+        <div class="selection-divider">
+          <div class="bulk-actions" role="group" aria-label="식당 일괄 선택">
+            <button id="add-all-restaurants" class="bulk-action" type="button" aria-label="모두 추가" title="모두 추가" disabled>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 7 4-4 4 4M4 12l4-4 4 4"/></svg>
+            </button>
+            <button id="remove-all-restaurants" class="bulk-action" type="button" aria-label="모두 제거" title="모두 제거" disabled>
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 4 4 4 4-4M4 9l4 4 4-4"/></svg>
+            </button>
+          </div>
+        </div>
+        <div id="other-restaurants" class="restaurants"></div>
+      </section>
+      <noscript>식단을 보려면 JavaScript를 활성화해 주세요.</noscript>
+      <footer class="attribution">
+        <span>made by <a href="https://github.com/cyansky99" target="_blank" rel="noopener noreferrer">cyansky</a></span>
+        <span class="menu-sources">출처:
+          <a id="cooperative-source" href="https://snuco.snu.ac.kr/foodmenu/" target="_blank" rel="noopener noreferrer" aria-label="생협 식당 메뉴 출처: 서울대학교 생활협동조합">생협</a>
+          <span aria-hidden="true"> · </span>
+          <a id="dormitory-source" href="https://snudorm.snu.ac.kr/foodmenu/" target="_blank" rel="noopener noreferrer" aria-label="아워홈 메뉴 출처: 관악학생생활관" title="아워홈 식단">관악학생생활관</a>
+        </span>
+      </footer>
+    </main>
+  </body>
+</html>

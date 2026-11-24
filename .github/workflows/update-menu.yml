@@ -55,8 +55,8 @@ jobs:
       - name: Prepare public site
         run: |
           mkdir -p dist/assets dist/data
-          cp index.html dist/
-          cp assets/*.js assets/*.css dist/assets/
+          cp index.html settings.html dist/
+          cp assets/*.js assets/*.css assets/*.svg dist/assets/
           cp data/menus.json dist/data/
 
       - name: Upload site

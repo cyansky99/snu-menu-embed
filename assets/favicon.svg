@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>서울대 식단</title>
+  <desc>K11의 아래 두 그릇과 안쪽 그라데이션을 중심 위치 그대로 16% 확대했습니다.</desc>
+  <defs>
+    <linearGradient id="plastic" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#d0a5b6"/>
+      <stop offset="1" stop-color="#bd8ba2"/>
+    </linearGradient>
+    <linearGradient id="well" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e9ecea"/>
+    </linearGradient>
+    <radialGradient id="bowl" cx="50%" cy="50%" r="55%" fx="50%" fy="72%">
+      <stop stop-color="#fbfcfb"/>
+      <stop offset=".65" stop-color="#e5eae8"/>
+      <stop offset="1" stop-color="#adbab7"/>
+    </radialGradient>
+  </defs>
+  <rect x="2" y="7" width="60" height="50" rx="8" fill="url(#plastic)" stroke="none"/>
+  <g fill="url(#well)" stroke="none">
+    <circle cx="14" cy="20" r="6.5"/>
+    <circle cx="32" cy="20" r="6.5"/>
+    <circle cx="50" cy="20" r="6.5"/>
+    <circle cx="19" cy="41" r="11.6"/>
+    <circle cx="45" cy="41" r="11.6"/>
+  </g>
+  <g fill="url(#bowl)" stroke="none">
+    <circle cx="14" cy="20" r="4.6"/>
+    <circle cx="32" cy="20" r="4.6"/>
+    <circle cx="50" cy="20" r="4.6"/>
+    <circle cx="19" cy="41" r="9.86"/>
+    <circle cx="45" cy="41" r="9.86"/>
+  </g>
+</svg>
