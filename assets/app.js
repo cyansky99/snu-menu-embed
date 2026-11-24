@@ -18,9 +18,15 @@ const copyUrlFeedback = document.querySelector("#copy-url-feedback");
 const copyUrlFallback = document.querySelector("#copy-url-fallback");
 let copyFeedbackTimer;
 const params = new URLSearchParams(location.search);
+// Old bookmarks may contain a preview meal. Only persistent settings belong in URLs.
+if (params.has("view")) {
+  params.delete("view");
+  const url = new URL(location.href);
+  url.search = params.toString();
+  history.replaceState(history.state, "", url);
+}
 const themeModes = ["auto", "light", "dark", "christmas"];
 const themeLabels = { auto: "Auto", light: "Light", dark: "Dark", christmas: "Christmas" };
-let initialView = params.get("view");
 const cardContainers = [container, otherContainer].filter(Boolean);
 // Set false to return to the original aligned-row layout.
 const compactCardLayout = true;
@@ -55,11 +61,6 @@ function syncWindow() {
   currentKey = key;
   // Replace the old window so only previous/current/next remain navigable.
   mealWindow = [-1, 0, 1].map(offset => adjacentMeal(current, offset));
-  if (initialView) {
-    const index = mealWindow.findIndex(context => `${context.date}/${context.meal}` === initialView);
-    if (index >= 0) selectedOffset = index - 1;
-    initialView = null;
-  }
   return changed;
 }
 
@@ -153,9 +154,7 @@ function currentRestaurantGroups(context) {
 }
 
 function saveSelection(ids, buttonId, message, fallbackId = buttonId) {
-  const context = mealWindow[selectedOffset + 1];
   params.set("restaurants", ids.join(","));
-  params.set("view", `${context.date}/${context.meal}`);
   const url = new URL(location.href);
   url.search = params.toString();
   history.replaceState(null, "", url);
@@ -295,9 +294,8 @@ function render() {
   const day = data?.days?.[context.date];
   const groups = currentRestaurantGroups(context);
   const destination = new URL(settingsMode ? "./index.html" : "./settings.html", location.href);
-  // Carry the current selection, order and meal into settings and back.
+  // Preserve settings across pages; each visit starts at the current meal.
   if (settingsMode || day || params.has("restaurants")) destination.searchParams.set("restaurants", groups.ids.join(","));
-  destination.searchParams.set("view", `${context.date}/${context.meal}`);
   if (params.has("theme")) destination.searchParams.set("theme", window.menuTheme.get());
   configurationLink.href = destination.href;
   statusElement.hidden = settingsMode || (Boolean(day) && !failed);
@@ -411,8 +409,6 @@ function navigate(direction) {
 async function copyMenuUrl() {
   if (!settingsMode || copyUrlButton.disabled) return;
   const url = new URL(configurationLink.href);
-  // A saved embed should open at the current meal, not a temporary preview slot.
-  url.searchParams.delete("view");
   clearTimeout(copyFeedbackTimer);
   copyUrlFeedback.textContent = "";
   copyUrlFallback.hidden = true;
