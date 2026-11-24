@@ -1,4 +1,4 @@
-// Keep the original row-major column assignment: 1/4/7, 2/5/8, 3/6/9.
+// Keep row-major column assignment for the current number of CSS grid columns.
 // Only the vertical positions change; DOM and keyboard reading order stay intact.
 export function packCards(container, columns) {
   const cards = Array.from(container.children);

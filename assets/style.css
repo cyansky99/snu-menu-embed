@@ -75,7 +75,7 @@ h1 { margin: 0; font-size: 14px; font-weight: 600; letter-spacing: -.025em; }
 .meal-arrow:disabled { opacity: .25; cursor: default; }
 #status { margin: 0 0 12px; color: var(--muted); font-size: 12px; line-height: 1.6; }
 [hidden] { display: none !important; }
-.restaurants { --card-gap: 12px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--card-gap); align-items: start; }
+.restaurants { --card-columns: 3; --card-gap: 12px; display: grid; grid-template-columns: repeat(var(--card-columns), minmax(0, 1fr)); gap: var(--card-gap); align-items: start; }
 .restaurants.packed { grid-auto-rows: 1px; row-gap: 0; }
 .restaurants.packed > .restaurant { align-self: stretch; }
 .restaurant { --accent: var(--muted); --heading-gap: 16px; border: 1px solid var(--border); border-radius: 6px; background: var(--card); padding: 16px; min-width: 0; }
@@ -106,8 +106,11 @@ h2 > .restaurant-hours { position: relative; top: 1px; }
 .menu-sources { white-space: nowrap; }
 .attribution a { color: var(--attribution); text-decoration: none; }
 .attribution a:hover, .attribution a:focus-visible { color: var(--muted); text-decoration: underline; }
+@media (max-width: 959px) {
+  .restaurants { --card-columns: 2; }
+}
 @media (max-width: 639px) {
-  .restaurants { --card-gap: 10px; grid-template-columns: 1fr; }
+  .restaurants { --card-columns: 1; --card-gap: 10px; }
   .widget { padding: 12px; }
   .restaurant { --heading-gap: 12px; padding: 14px; }
 }

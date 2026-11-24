@@ -29,7 +29,10 @@ function scheduleLayout() {
   if (!compactCardLayout || layoutFrame !== null) return;
   layoutFrame = requestAnimationFrame(() => {
     layoutFrame = null;
-    cardContainers.forEach(group => packCards(group, window.matchMedia("(max-width: 639px)").matches ? 1 : 3));
+    cardContainers.forEach(group => {
+      const columns = Number.parseInt(getComputedStyle(group).getPropertyValue("--card-columns"), 10) || 1;
+      packCards(group, columns);
+    });
   });
 }
 const layoutObserver = compactCardLayout && typeof ResizeObserver !== "undefined"
