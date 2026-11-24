@@ -1,6 +1,6 @@
 // Apply before styles load so dark embeds never paint a light background first.
 (() => {
-  const modes = ["auto", "light", "dark", "christmas"];
+  const modes = ["auto", "light", "dark", "christmas", "snu"];
   const system = window.matchMedia("(prefers-color-scheme: dark)");
   const normalize = value => modes.includes(value) ? value : "auto";
   let preference = normalize(new URLSearchParams(location.search).get("theme"));

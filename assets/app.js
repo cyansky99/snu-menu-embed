@@ -25,8 +25,8 @@ if (params.has("view")) {
   url.search = params.toString();
   history.replaceState(history.state, "", url);
 }
-const themeModes = ["auto", "light", "dark", "christmas"];
-const themeLabels = { auto: "Auto", light: "Light", dark: "Dark", christmas: "Christmas" };
+const themeModes = ["auto", "light", "dark", "christmas", "snu"];
+const themeLabels = { auto: "Auto", light: "Light", dark: "Dark", christmas: "Christmas", snu: "SNU" };
 const cardContainers = [container, otherContainer].filter(Boolean);
 // Set false to return to the original aligned-row layout.
 const compactCardLayout = true;
@@ -276,7 +276,7 @@ function render() {
     const theme = document.createElement("span");
     theme.className = "context-theme";
     theme.textContent = themeLabels[window.menuTheme.get()];
-    theme.title = window.menuTheme.get() === "auto" ? "기기·브라우저 설정에 맞춤" : "화면 밝기 테마";
+    theme.title = window.menuTheme.get() === "auto" ? "기기·브라우저 설정에 맞춤" : "화면 테마";
     contextElement.replaceChildren(measure, theme);
   } else {
     contextElement.textContent = contextLabel;

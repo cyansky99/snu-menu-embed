@@ -1,0 +1,160 @@
+/* SNU palette supplied by the user: Blue #0f0f70, Beige #dcdab2, Gray #666666. */
+:root[data-theme="snu"] {
+  color-scheme: light;
+  --snu-blue: #0f0f70;
+  --snu-beige: #dcdab2;
+  --canvas: #0f0f70;
+  --card: #fff;
+  --text: #30313c;
+  --muted: #666666;
+  --subtle: #74746f;
+  --attribution: #74746f;
+  --border: #e0dfd5;
+  --hover: #eae9dd;
+  --button-bg: #0f0f70;
+  --button-text: #fff;
+  --button-hover-bg: #262682;
+  --toggle-bg: #e5e5f0;
+  --toggle-text: #0f0f70;
+  --toggle-hover-bg: #d5d5e8;
+  --toggle-hover-text: #0f0f70;
+  --placeholder: #e9e8df;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+:root[data-theme="snu"] .widget {
+  width: calc(100% - 24px);
+  margin: 16px auto;
+  padding: 20px;
+  background: #f6f5ef;
+  border: 1px solid #ffffff30;
+  border-radius: 8px;
+  box-shadow: 0 12px 40px #06063440;
+}
+
+:root[data-theme="snu"] .heading {
+  margin: -20px -20px 20px;
+  padding: 16px 20px;
+  gap: 16px 20px;
+  border-radius: 7px 7px 0 0;
+  border-bottom: 4px solid var(--snu-beige);
+  background: var(--snu-blue);
+  color: #fff;
+}
+
+:root[data-theme="snu"] .site-title {
+  --snu-title-line: 28px;
+  height: auto;
+  gap: 8px;
+}
+
+/* Match the title plus subtitle height; keep the original PNG alpha channel. */
+:root[data-theme="snu"] .site-title::before {
+  content: "";
+  flex: 0 0 auto;
+  height: calc(var(--snu-title-line) + 20px);
+  aspect-ratio: 2116 / 2195;
+  margin-right: 4px;
+  background: url("./snu-emblem.png") center / contain no-repeat;
+  filter: brightness(0) invert(1);
+}
+
+/* Center the gear on the Korean title, excluding its English subtitle. */
+:root[data-theme="snu"] .site-title .settings-link {
+  align-self: flex-start;
+  margin-top: calc((var(--snu-title-line) - 24px) / 2);
+}
+
+:root[data-theme="snu"] .site-title h1 {
+  display: block;
+  height: auto;
+  color: #fff;
+  font-size: 22px;
+  line-height: var(--snu-title-line);
+  letter-spacing: -.04em;
+}
+
+:root[data-theme="snu"] .site-title h1::after {
+  content: "SNU MENU";
+  display: block;
+  margin-top: 6px;
+  color: var(--snu-beige);
+  font-size: 10px;
+  line-height: 1.4;
+  font-weight: 400;
+  letter-spacing: .18em;
+}
+
+:root[data-theme="snu"] .settings-link,
+:root[data-theme="snu"] .meal-arrow,
+:root[data-theme="snu"] #context {
+  color: #fff;
+}
+
+:root[data-theme="snu"] .settings-link:hover,
+:root[data-theme="snu"] .meal-arrow:hover:not(:disabled) {
+  color: #fff;
+  background: #ffffff26;
+}
+
+:root[data-theme="snu"] .heading :focus-visible {
+  outline-color: var(--snu-beige);
+}
+
+:root[data-theme="snu"] .meal-navigation {
+  border-radius: 6px;
+  padding: 3px;
+  background: #ffffff12;
+  border: 1px solid #ffffff40;
+}
+
+:root[data-theme="snu"] .restaurant {
+  box-shadow: 0 2px 6px #0f0f7009;
+}
+
+:root[data-theme="snu"] .restaurant-name {
+  color: #37352f;
+}
+
+:root[data-theme="snu"] .price {
+  color: #787774;
+}
+
+:root[data-theme="snu"] .settings-link.is-active {
+  color: var(--snu-blue);
+  background: var(--snu-beige);
+}
+
+:root[data-theme="snu"] .settings-link.is-active svg circle {
+  fill: var(--snu-beige);
+  stroke: var(--snu-beige);
+}
+
+:root[data-theme="snu"] .selection-divider::before {
+  background: var(--snu-beige);
+}
+
+:root[data-theme="snu"] .bulk-action:hover:not(:disabled) {
+  color: #fff;
+  background: var(--button-hover-bg);
+}
+
+:root[data-theme="snu"] .bulk-action:active:not(:disabled) {
+  background: #08084e;
+}
+
+@media (max-width: 639px) {
+  :root[data-theme="snu"] .widget {
+    width: calc(100% - 16px);
+    margin: 8px auto;
+    padding: 12px;
+  }
+  :root[data-theme="snu"] .heading {
+    margin: -12px -12px 14px;
+    padding: 16px 12px;
+    gap: 12px;
+  }
+  :root[data-theme="snu"] .site-title { --snu-title-line: 24px; }
+  :root[data-theme="snu"] .site-title h1 { font-size: 19px; }
+}
