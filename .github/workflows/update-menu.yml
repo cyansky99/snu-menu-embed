@@ -27,14 +27,18 @@ jobs:
         uses: actions/checkout@v7
 
       - name: Set up Python
+        if: github.event_name != 'push'
         uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
       - name: Fetch menus
+        # Code pushes deploy the checked-in data without depending on source sites.
+        if: github.event_name != 'push'
         run: python scripts/fetch_menu.py
 
       - name: Commit updated data
+        if: github.event_name != 'push'
         run: |
           if git diff --quiet -- data/menus.json; then
             echo "Menu data is unchanged."
