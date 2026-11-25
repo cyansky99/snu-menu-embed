@@ -1,279 +1,7 @@
 {
   "schemaVersion": 1,
-  "fetchedAt": "2026-11-25T18:21:28+09:00",
+  "fetchedAt": "2026-11-26T04:39:25+09:00",
   "days": {
-    "2026-11-24": {
-      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC",
-      "sources": {
-        "cooperative": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC",
-        "dormitory": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-      },
-      "restaurants": [
-        {
-          "name": "학생회관식당",
-          "meals": {
-            "breakfast": "돈까스정식 : 3,000원",
-            "lunch": "우삼겹마늘쫑비빔밥 : 6,000원\n순두부찌개(#) : 3,000원\n칠리깐풍육 : 6000원",
-            "dinner": "매운갈비떡찜 : 6,000원\n부추잡채(#) : 3,000원"
-          },
-          "hours": {
-            "breakfast": "08:00 – 10:00",
-            "lunch": "11:00 – 14:30",
-            "dinner": "17:00 – 19:00"
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [],
-            "dinner": []
-          },
-          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        },
-        {
-          "name": "자하연식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "차돌청국장찌개 : 5,500원\n닭목살양념구이 : 6,500원\n목살김치찌개 : 12,000원\n지라시스시(#) : 14,000원\n<세미뷔페>\n버섯불고기\n부추적양파무침\n그린샐러드\n유부국\n후식",
-            "dinner": "돈까스덮밥 : 6,000원"
-          },
-          "hours": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": ""
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [
-              {
-                "name": "2층",
-                "menu": "차돌청국장찌개 : 5,500원\n닭목살양념구이 : 6,500원",
-                "hours": "11:30 – 14:00",
-                "accessHours": []
-              },
-              {
-                "name": "3층",
-                "menu": "목살김치찌개 : 12,000원\n지라시스시(#) : 14,000원\n<세미뷔페>\n버섯불고기\n부추적양파무침\n그린샐러드\n유부국\n후식",
-                "hours": "11:30 – 14:00",
-                "accessHours": []
-              }
-            ],
-            "dinner": [
-              {
-                "name": "2층",
-                "menu": "돈까스덮밥 : 6,000원",
-                "hours": "17:00 – 18:30",
-                "accessHours": []
-              },
-              {
-                "name": "3층",
-                "menu": "",
-                "hours": "",
-                "accessHours": []
-              }
-            ]
-          },
-          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        },
-        {
-          "name": "예술계식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<A코너>바지락칼국수, 너비아니구이&파채, 춘권튀김 : 6,000원\n※ 운영시간 : 11:30 ~ 14:00\n<B코너>제육김치덮밥, 계란찜, 어묵볶음 : 6,500원\n※ 운영시간 : 11:30 ~ 13:00\n<C코너>셀프라면, 밥, 김치 : 3,000원",
-            "dinner": "김밥볶음밥, 마라떡볶이, 어묵튀김 : 6,500원"
-          },
-          "hours": {
-            "breakfast": "",
-            "lunch": "",
-            "dinner": "17:00 – 18:30"
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [
-              {
-                "name": "A코너",
-                "menu": "바지락칼국수, 너비아니구이&파채, 춘권튀김 : 6,000원",
-                "hours": "11:30 – 14:00",
-                "accessHours": []
-              },
-              {
-                "name": "B코너",
-                "menu": "제육김치덮밥, 계란찜, 어묵볶음 : 6,500원",
-                "hours": "11:30 – 13:00",
-                "accessHours": []
-              },
-              {
-                "name": "C코너",
-                "menu": "셀프라면, 밥, 김치 : 3,000원",
-                "hours": "",
-                "accessHours": []
-              }
-            ],
-            "dinner": []
-          },
-          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        },
-        {
-          "name": "두레미담",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<셀프코너> 7,000원\n잡곡밥\n햄듬뿍부대찌개\n순살치즈불닭\n멘치까스*콘마요소스\n새싹들기름막국수\n콩자반\n깍두기\n그린샐러드\n오늘의차",
-            "dinner": "<셀프코너> 7,000원\n잡곡밥\n북어콩나물해장국\n헐랭이수육*쌈장\n시즈닝치킨너겟\n부추적양파겨자냉채\n딸기맛웨하스\n포기김치\n그린샐러드\n오늘의차"
-          },
-          "hours": {
-            "breakfast": "",
-            "lunch": "11:00 – 14:00",
-            "dinner": "17:00 – 19:00"
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [],
-            "dinner": []
-          },
-          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        },
-        {
-          "name": "동원관식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "목살김치찌개&어니언치킨 : 6,000원\n연어갈릭크림파스타&프렌치토스트 : 6,500원",
-            "dinner": ""
-          },
-          "hours": {
-            "breakfast": "",
-            "lunch": "11:00 – 14:00",
-            "dinner": ""
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [],
-            "dinner": []
-          },
-          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        },
-        {
-          "name": "기숙사식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "꽃게된장찌개&제육숙주볶음 : 6,000원",
-            "dinner": "오리주물럭 : 6,500원"
-          },
-          "hours": {
-            "breakfast": "",
-            "lunch": "11:30 – 13:30",
-            "dinner": "17:30 – 19:00"
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [],
-            "dinner": []
-          },
-          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        },
-        {
-          "name": "3식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "잔치국수&조선떡갈비 : 6,000원\n통마늘제육부추볶음 : 6,000원\n<든든한끼샐러드코너>\n연어구이샐러드(채식변경가능) : 9,500원",
-            "dinner": ""
-          },
-          "hours": {
-            "breakfast": "",
-            "lunch": "11:00 – 14:00",
-            "dinner": ""
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [],
-            "dinner": []
-          },
-          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        },
-        {
-          "name": "302동식당",
-          "meals": {
-            "breakfast": "",
-            "lunch": "<뷔페> 6,500원\n뼈없는감자탕\n치킨너겟\n새송이메추리알장조림\n도토리묵채소무침\n김자반\n그린샐러드&오늘의차",
-            "dinner": "<뷔페> 6,500원\n불고기필라프 & 소스\n등심돈까스\n소세지케찹볶음\n상추겉절이\n유부국\n그린샐러드&오늘의차"
-          },
-          "hours": {
-            "breakfast": "",
-            "lunch": "11:30 – 13:30",
-            "dinner": "17:00 – 18:30"
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [],
-            "dinner": []
-          },
-          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        },
-        {
-          "name": "301동식당",
-          "meals": {
-            "breakfast": "<천원의아침밥>\n제육컵밥&두유 : 1,000원\n김밥&두유: 1,000원\n즉석떡국OR즉석라면: 1,000원",
-            "lunch": "<식사>\n하이라이스&오믈렛 : 6,500원\n(뚝)설렁탕&두부구이: 6,500원\n※ 운영시간 11:30~13:30\n<TAKE-OUT>\n카프레제샐러드 : 5,500원\n헬스팩 : 6,000원\n※ 운영시간 : 10:30~16:00\n<301동1층 교직원전용식당>\n취나물밥&훈제오리&명이나물: 9,000원\n※ 교직원이용시간 : 11:30~12:15\n※ 학생 및 대학원생 이용시간 12:15~13:30",
-            "dinner": ""
-          },
-          "hours": {
-            "breakfast": "08:20 – 소진 시",
-            "lunch": "",
-            "dinner": ""
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [
-              {
-                "name": "식사",
-                "menu": "하이라이스&오믈렛 : 6,500원\n(뚝)설렁탕&두부구이: 6,500원",
-                "hours": "11:30 – 13:30",
-                "accessHours": []
-              },
-              {
-                "name": "테이크아웃",
-                "menu": "카프레제샐러드 : 5,500원\n헬스팩 : 6,000원",
-                "hours": "10:30 – 16:00",
-                "accessHours": []
-              },
-              {
-                "name": "1층 교직원식당",
-                "menu": "취나물밥&훈제오리&명이나물: 9,000원",
-                "hours": "",
-                "accessHours": [
-                  {
-                    "label": "교직원",
-                    "hours": "11:30 – 12:15"
-                  },
-                  {
-                    "label": "학생 및 대학원생",
-                    "hours": "12:15 – 13:30"
-                  }
-                ]
-              }
-            ],
-            "dinner": []
-          },
-          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        },
-        {
-          "name": "아워홈",
-          "meals": {
-            "breakfast": "세미양식부페 : 5,000원\n단호박스프/김치두부국\n고기산적조림\n계란후라이\n토스트\n씨리얼\n흰우유/두유\n그린샐러드",
-            "lunch": "콘치즈제육구이&열무된장국 : 6,000원\n명동식칼국수&수제고구마튀김 : 6,000원\n(잇템) 소떡소떡 : 2,000원",
-            "dinner": "유부주머니어묵매운탕&옛날소시지전 : 6,000원\n참치마요덮밥&미니떡볶이 : 6,000원\n(잇템) 버팔로윙 : 4,000원"
-          },
-          "hours": {
-            "breakfast": "08:00 – 09:30",
-            "lunch": "11:30 – 13:30",
-            "dinner": "17:30 – 19:30"
-          },
-          "sections": {
-            "breakfast": [],
-            "lunch": [],
-            "dinner": []
-          },
-          "source": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-24&orderby=DESC"
-        }
-      ]
-    },
     "2026-11-25": {
       "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-25&orderby=DESC",
       "sources": {
@@ -815,6 +543,278 @@
             "dinner": []
           },
           "source": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-26&orderby=DESC"
+        }
+      ]
+    },
+    "2026-11-27": {
+      "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC",
+      "sources": {
+        "cooperative": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC",
+        "dormitory": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+      },
+      "restaurants": [
+        {
+          "name": "학생회관식당",
+          "meals": {
+            "breakfast": "차돌된장죽 : 3,000원",
+            "lunch": "통마늘제육부추무침 : 6,000원\n두부명란찌개 : 3,000원\n마제소바 : 6,500원",
+            "dinner": "시나몬치킨스테이크 : 6,500원\n어묵매운탕(#) : 3,000원"
+          },
+          "hours": {
+            "breakfast": "08:00 – 10:00",
+            "lunch": "11:00 – 14:30",
+            "dinner": "17:00 – 19:00"
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [],
+            "dinner": []
+          },
+          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+        },
+        {
+          "name": "자하연식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "닭칼국수정식 : 7,000원\n뚝배기황태해장국(#) : 13,000원\n목살스테이크 : 15,000원\n<세미뷔페>\n메추리알떡볶이\n연근해바라기씨조림\n그린샐러드\n팽이미소국\n후식",
+            "dinner": "쇠고기장조림버터비빔밥 : 6,000원"
+          },
+          "hours": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [
+              {
+                "name": "2층",
+                "menu": "닭칼국수정식 : 7,000원",
+                "hours": "11:30 – 14:00",
+                "accessHours": []
+              },
+              {
+                "name": "3층",
+                "menu": "뚝배기황태해장국(#) : 13,000원\n목살스테이크 : 15,000원\n<세미뷔페>\n메추리알떡볶이\n연근해바라기씨조림\n그린샐러드\n팽이미소국\n후식",
+                "hours": "11:30 – 14:00",
+                "accessHours": []
+              }
+            ],
+            "dinner": [
+              {
+                "name": "2층",
+                "menu": "쇠고기장조림버터비빔밥 : 6,000원",
+                "hours": "17:00 – 18:30",
+                "accessHours": []
+              },
+              {
+                "name": "3층",
+                "menu": "",
+                "hours": "",
+                "accessHours": []
+              }
+            ]
+          },
+          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+        },
+        {
+          "name": "예술계식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "<A코너>뚝배기)짬뽕파스타, 왕새우튀김&칠리s, 마늘바게트 : 6,500원\n※ 운영시간 : 11:30 ~ 14:00\n<B코너>꼬치어묵김치우동, 타코야끼, 단호박범벅 : 6,000원\n※ 운영시간 : 11:30 ~ 13:00\n<C코너>셀프라면, 밥, 김치 : 3,000원",
+            "dinner": "순대라면, 후랑크푸실리볶음, 고구마크로켓 : 6,000원"
+          },
+          "hours": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": "17:00 – 18:30"
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [
+              {
+                "name": "A코너",
+                "menu": "뚝배기)짬뽕파스타, 왕새우튀김&칠리s, 마늘바게트 : 6,500원",
+                "hours": "11:30 – 14:00",
+                "accessHours": []
+              },
+              {
+                "name": "B코너",
+                "menu": "꼬치어묵김치우동, 타코야끼, 단호박범벅 : 6,000원",
+                "hours": "11:30 – 13:00",
+                "accessHours": []
+              },
+              {
+                "name": "C코너",
+                "menu": "셀프라면, 밥, 김치 : 3,000원",
+                "hours": "",
+                "accessHours": []
+              }
+            ],
+            "dinner": []
+          },
+          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+        },
+        {
+          "name": "두레미담",
+          "meals": {
+            "breakfast": "",
+            "lunch": "<셀프코너> 7,000원\n잡곡밥\n소고기미역국\n영양부추간장불고기\n나쵸치즈디핑치킨스틱\n새콤비빔쫄면\n타카나즈케무침\n깍두기\n그린샐러드\n오늘의차",
+            "dinner": "<셀프코너> 7,000원\n잡곡밥\n돈육순두부찌개\n수원왕갈비순살찜닭\n순대야채볶음\n마카로니콘샐러드\n미니고구마파이\n포기김치\n그린샐러드\n오늘의차"
+          },
+          "hours": {
+            "breakfast": "",
+            "lunch": "11:00 – 14:00",
+            "dinner": "17:00 – 19:00"
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [],
+            "dinner": []
+          },
+          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+        },
+        {
+          "name": "동원관식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "미나리닭곰탕&어묵전/파채무침 : 6,500원",
+            "dinner": ""
+          },
+          "hours": {
+            "breakfast": "",
+            "lunch": "11:00 – 14:00",
+            "dinner": ""
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [],
+            "dinner": []
+          },
+          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+        },
+        {
+          "name": "기숙사식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "매운돼지갈비찜 : 6,000원",
+            "dinner": "쇠고기육개장 : 6,000원"
+          },
+          "hours": {
+            "breakfast": "",
+            "lunch": "11:30 – 13:30",
+            "dinner": "17:30 – 19:00"
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [],
+            "dinner": []
+          },
+          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+        },
+        {
+          "name": "3식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "치즈돈까스&미니우동 : 6,000원",
+            "dinner": ""
+          },
+          "hours": {
+            "breakfast": "",
+            "lunch": "11:00 – 14:00",
+            "dinner": ""
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [],
+            "dinner": []
+          },
+          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+        },
+        {
+          "name": "302동식당",
+          "meals": {
+            "breakfast": "",
+            "lunch": "공대수시면접으로 인해 휴점합니다",
+            "dinner": "공대수시면접으로 인해 휴점합니다"
+          },
+          "hours": {
+            "breakfast": "",
+            "lunch": "",
+            "dinner": ""
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [],
+            "dinner": []
+          },
+          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+        },
+        {
+          "name": "301동식당",
+          "meals": {
+            "breakfast": "<천원의아침밥>\n계란소보루컵밥&두유 : 1,000원\n삼각김밥&삶은계란&바나나&두유: 1,000원\n즉석떡국OR즉석라면: 1,000원",
+            "lunch": "<식사>\n돌솥비빔밥 : 6,500원\n※ 운영시간 11:30~13:30\n<TAKE-OUT>\n블랙페퍼닭가슴살샐러드 : 5,500원\n헬스팩 : 6,000원\n※ 운영시간 : 10:30~16:00\n<301동1층 교직원전용식당>\n마제덮밥&치킨가스: 9,000원\n※ 교직원이용시간 : 11:30~12:15\n※ 학생 및 대학원생 이용시간 12:15~13:30",
+            "dinner": ""
+          },
+          "hours": {
+            "breakfast": "08:20 – 소진 시",
+            "lunch": "",
+            "dinner": ""
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [
+              {
+                "name": "식사",
+                "menu": "돌솥비빔밥 : 6,500원",
+                "hours": "11:30 – 13:30",
+                "accessHours": []
+              },
+              {
+                "name": "테이크아웃",
+                "menu": "블랙페퍼닭가슴살샐러드 : 5,500원\n헬스팩 : 6,000원",
+                "hours": "10:30 – 16:00",
+                "accessHours": []
+              },
+              {
+                "name": "1층 교직원식당",
+                "menu": "마제덮밥&치킨가스: 9,000원",
+                "hours": "",
+                "accessHours": [
+                  {
+                    "label": "교직원",
+                    "hours": "11:30 – 12:15"
+                  },
+                  {
+                    "label": "학생 및 대학원생",
+                    "hours": "12:15 – 13:30"
+                  }
+                ]
+              }
+            ],
+            "dinner": []
+          },
+          "source": "https://snuco.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
+        },
+        {
+          "name": "아워홈",
+          "meals": {
+            "breakfast": "세미양식부페 : 5,000원\n콘스프/들깨탕\n치킨너겟\n계란후라이\n토스트\n씨리얼\n흰우유/두유\n그린샐러드",
+            "lunch": "목살김치찌개&계란말이 : 6,000원\n일식커리새우튀김덮밥&토마토유자청무침 : 6,000원\n(잇템) 콤비네이션피자 : 3,000원",
+            "dinner": "계란볶음밥*마파두부소스&우유튀김 : 6,000원\n(잇템) 포테이토핫도그 : 3,000원"
+          },
+          "hours": {
+            "breakfast": "08:00 – 09:30",
+            "lunch": "11:30 – 13:30",
+            "dinner": "17:30 – 19:30"
+          },
+          "sections": {
+            "breakfast": [],
+            "lunch": [],
+            "dinner": []
+          },
+          "source": "https://snudorm.snu.ac.kr/foodmenu/?date=2026-11-27&orderby=DESC"
         }
       ]
     }
